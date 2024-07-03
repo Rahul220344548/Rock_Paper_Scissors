@@ -32,7 +32,6 @@ function getHumanchoice() {
 function playRound(humanChoice, computerChoice) {
 
     humanChoice.toLowerCase(); //rock
-    // return console.log(humanChoice.toLowerCase());
 
     switch (humanChoice.toLowerCase()) {
 
@@ -49,6 +48,21 @@ function playRound(humanChoice, computerChoice) {
                 console.log("Draw! No Winner");
                 break;
             }
+        
+        case "paper":
+            if (computerChoice == "rock") {
+                console.log("You Win! Paper beats Rock");
+                break;
+            }
+            else if (computerChoice == "scissors") {
+                console.log("You Lose! Scissors beats paper");
+                break;
+            } else {
+                console.log("Draw! No Winner");
+                break;
+            }
+        
+
         default:
             console.log("end");
             break;
