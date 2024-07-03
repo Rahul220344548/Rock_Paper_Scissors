@@ -2,6 +2,9 @@ let choice1 = "rock";
 let choice2 = "paper";
 let choice3 = "scissors";
 
+let humanScore = 0;
+let computerScore = 0;
+
 function getComputerChoice() {
 
     let choice1 = "rock";
