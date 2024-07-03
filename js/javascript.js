@@ -26,16 +26,8 @@ function getComputerChoice() {
 
 function getHumanchoice() {
 
-    let choice = parseInt(prompt("rock (1) , paper (2) , scissors (3) ? choose an option: "));
-    
-    if (choice==1) {
-        return console.log(choice1);
-    }
-    else if (choice == 2) {
-        return console.log(choice2);
-    } else {
-        return console.log(choice3);
-    }
+    let choice = prompt("rock (1) , paper (2) , scissors (3) ? choose an option: ");
+    return choice;
     
 }
 
@@ -43,7 +35,9 @@ function getHumanchoice() {
 
 function playRound(humanChoice, computerChoice) {
 
-    return console.log(getComputerChoice());
+    // humanChoice.toLowerCase();
+
+    return console.log(humanChoice.toLowerCase());
 }
 
 const humanSelection = getHumanchoice();
