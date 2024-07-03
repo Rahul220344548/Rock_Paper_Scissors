@@ -23,8 +23,7 @@ function getComputerChoice() {
 }
 
 function getHumanchoice() {
-    let choice = "rock";
-    // let choice = prompt("rock , paper  , scissors  ? Type an option: ");
+    let choice = prompt("rock , paper  , scissors  ? Type an option: ");
     return choice;
     
 }
@@ -62,15 +61,21 @@ function playRound(humanChoice, computerChoice) {
                 break;
             }
         
-
+        case "scissors":
+            if (computerChoice == "rock") {
+                console.log("You Lose! Rock beats Scissors");
+                break;
+            }
+            else if (computerChoice == "scissors") {
+                console.log("Draw! No Winner");
+                break;
+            } else {
+                console.log("You Win! Scissors beats paper");
+                break;
+            }
         default:
             console.log("end");
             break;
-
-            
-      
-        
-        
     }
 
  
