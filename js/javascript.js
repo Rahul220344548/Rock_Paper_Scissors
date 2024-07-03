@@ -39,4 +39,14 @@ function getHumanchoice() {
     
 }
 
-getHumanchoice();
+// getHumanchoice();
+
+function playRound(humanChoice, computerChoice) {
+
+    return console.log(getComputerChoice());
+}
+
+const humanSelection = getHumanchoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection)
