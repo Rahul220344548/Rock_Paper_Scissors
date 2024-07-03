@@ -12,32 +12,54 @@ function getComputerChoice() {
     let choice3 = "scissors";
     let prob = Math.random();
     if (prob > 0 && prob < 0.333) {
-        return console.log(choice1);
+        return choice1;
     }
     else if (prob > 0.333 && prob < 0.666) {
-        return console.log(choice2);
+        return choice2;
     } else {
-        return console.log(choice3);;
+        return choice3;
     }
 
 }
 
-// getComputerChoice();
-
 function getHumanchoice() {
-
-    let choice = prompt("rock (1) , paper (2) , scissors (3) ? choose an option: ");
+    let choice = "rock";
+    // let choice = prompt("rock , paper  , scissors  ? Type an option: ");
     return choice;
     
 }
 
-// getHumanchoice();
-
 function playRound(humanChoice, computerChoice) {
 
-    // humanChoice.toLowerCase();
+    humanChoice.toLowerCase(); //rock
+    // return console.log(humanChoice.toLowerCase());
 
-    return console.log(humanChoice.toLowerCase());
+    switch (humanChoice.toLowerCase()) {
+
+        case "rock":
+
+            if (computerChoice == "paper") {
+                console.log("You lose! Paper beats Rock");
+                break;
+            }
+            else if (computerChoice == "scissors") {
+                console.log("You Win! Rock beats scissors");
+                break;
+            } else {
+                console.log("Draw! No Winner");
+                break;
+            }
+        default:
+            console.log("end");
+            break;
+
+            
+      
+        
+        
+    }
+
+ 
 }
 
 const humanSelection = getHumanchoice();
