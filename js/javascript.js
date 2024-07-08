@@ -52,13 +52,13 @@ function playRound(humanChoice, computerChoice) {
         
         case "paper":
             if (computerChoice == "rock") {
-                console.log("You Win! Paper beats Rock " + "Your Score is " + humanScore);
                 humanScore = humanScore + 1;
+                console.log("You Win! Paper beats Rock " + "Your Score is " + humanScore);
                 break;
             }
             else if (computerChoice == "scissors") {
-                console.log("You Lose! Scissors beats paper");
                 computerScore = computerScore + 1;
+                console.log("You Lose! Scissors beats paper");
                 break;
             } else {
                 console.log("Draw! No Winner");
@@ -95,7 +95,8 @@ function playGame(n) {
         const computerSelection = getComputerChoice();
         playRound(humanSelection, computerSelection);
     }
+    console.log("Human Score : " + humanScore + " Computer Score: " + computerScore);
 }
 
-let n = 5;
-playGame(5);
+let n = 5; 
+playGame(n);
