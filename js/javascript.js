@@ -38,12 +38,12 @@ function playRound(humanChoice, computerChoice) {
 
             if (computerChoice == "paper") {
                 computerScore = computerScore + 1;
-                console.log("You lose! Paper beats Rock " + "Score is " + computerScore);
+                console.log("You lose! Paper beats Rock");
                 break;
             }
             else if (computerChoice == "scissors") {
                 humanScore = humanScore + 1;
-                console.log("You Win! Rock beats scissors " + "Score is " + humanScore);
+                console.log("You Win! Rock beats scissors " + "Your Score is " + humanScore);
                 break;
             } else {
                 console.log("Draw! No Winner");
@@ -52,7 +52,7 @@ function playRound(humanChoice, computerChoice) {
         
         case "paper":
             if (computerChoice == "rock") {
-                console.log("You Win! Paper beats Rock");
+                console.log("You Win! Paper beats Rock " + "Your Score is " + humanScore);
                 humanScore = humanScore + 1;
                 break;
             }
@@ -67,16 +67,17 @@ function playRound(humanChoice, computerChoice) {
         
         case "scissors":
             if (computerChoice == "rock") {
-                console.log("You Lose! Rock beats Scissors");
                 computerScore = computerScore + 1;
+                console.log("You Lose! Rock beats Scissors");
                 break;
             }
             else if (computerChoice == "scissors") {
                 console.log("Draw! No Winner");
                 break;
             } else {
-                console.log("You Win! Scissors beats paper");
                 humanScore = humanScore + 1;
+                console.log("You Win! Scissors beats paper " + "Your Score is " + humanScore);
+                
                 break;
             }
         default:
@@ -87,7 +88,14 @@ function playRound(humanChoice, computerChoice) {
  
 }
 
-const humanSelection = getHumanchoice();
-const computerSelection = getComputerChoice();
+function playGame(n) {
 
-playRound(humanSelection, computerSelection)
+    for (let i = 0; i < n; i++) {
+        const humanSelection = getHumanchoice();
+        const computerSelection = getComputerChoice();
+        playRound(humanSelection, computerSelection);
+    }
+}
+
+let n = 5;
+playGame(5);
