@@ -38,7 +38,9 @@ function playRound(humanChoice, computerChoice) {
 
             if (computerChoice == "paper") {
                 computerScore = computerScore + 1;
-                console.log("You lose! Paper beats Rock");
+                const Lose = document.createElement('a');
+                Lose.textContent = " You lose! Paper beats Rock ";
+                newDiv.appendChild(Lose);
                 break;
             }
             else if (computerChoice == "scissors") {
@@ -102,11 +104,6 @@ let numberOfRounds = 5;
 // playGame(numberOfRounds);
 
 
-
-function displayValue(choice) {
-    alert(choice);
-}
-
 const buttons= document.querySelectorAll('.btn');
 
 buttons.forEach(button => {
@@ -116,5 +113,7 @@ buttons.forEach(button => {
     });
 });
 
-
+const body = document.querySelector("body");
+const newDiv = document.createElement("div");
+body.appendChild(newDiv);
 
