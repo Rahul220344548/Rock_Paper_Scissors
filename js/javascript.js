@@ -99,4 +99,20 @@ function playGame(n) {
 }
 
 let n = 5; 
-playGame(n);
+// playGame(n);
+
+
+// const RockButton = document.querySelector("#rockBtn");
+// const PaperButton = document.querySelector("#paperBtn");
+// const ScissorsButton = document.querySelector("#ScissorsBtn");
+
+const buttons= document.querySelectorAll('.btn');
+
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        alert("Hello");
+    });
+});
+
+
+
