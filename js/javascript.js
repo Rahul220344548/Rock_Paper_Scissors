@@ -43,7 +43,7 @@ function playRound(humanChoice, computerChoice) {
             }
             else if (computerChoice == "scissors") {
                 humanScore = humanScore + 1;
-                console.log("You Win! Rock beats scissors " + "Your Score is " + humanScore);
+                console.log("You Win! Rock beats scissors " + ", Your Score is " + humanScore);
                 break;
             } else {
                 console.log("Draw! No Winner");
@@ -53,7 +53,7 @@ function playRound(humanChoice, computerChoice) {
         case "paper":
             if (computerChoice == "rock") {
                 humanScore = humanScore + 1;
-                console.log("You Win! Paper beats Rock " + "Your Score is " + humanScore);
+                console.log("You Win! Paper beats Rock " + ", Your Score is " + humanScore);
                 break;
             }
             else if (computerChoice == "scissors") {
@@ -98,19 +98,21 @@ function playGame(n) {
     console.log("Human Score : " + humanScore + " Computer Score: " + computerScore);
 }
 
-let n = 5; 
-// playGame(n);
+let numberOfRounds = 5; 
+// playGame(numberOfRounds);
 
 
-// const RockButton = document.querySelector("#rockBtn");
-// const PaperButton = document.querySelector("#paperBtn");
-// const ScissorsButton = document.querySelector("#ScissorsBtn");
+
+function displayValue(choice) {
+    alert(choice);
+}
 
 const buttons= document.querySelectorAll('.btn');
 
 buttons.forEach(button => {
     button.addEventListener('click', () => {
-        alert("Hello");
+        const value = button.id;
+        playRound(value,computerSelection = getComputerChoice());
     });
 });
 
