@@ -38,48 +38,63 @@ function playRound(humanChoice, computerChoice) {
 
             if (computerChoice == "paper") {
                 computerScore = computerScore + 1;
-                const Lose = document.createElement('a');
-                Lose.textContent = " You lose! Paper beats Rock ";
-                newDiv.appendChild(Lose);
+                const rockLose = document.createElement('h3');
+                rockLose.textContent = " You lose! Paper beats Rock ";
+                newDiv.appendChild(rockLose);
                 break;
             }
             else if (computerChoice == "scissors") {
                 humanScore = humanScore + 1;
-                console.log("You Win! Rock beats scissors " + ", Your Score is " + humanScore);
+                const rockWin = document.createElement("h3");
+                rockWin.textContent = " You Win! Rock beats scissors ";
+                newDiv.appendChild(rockWin);
                 break;
             } else {
-                console.log("Draw! No Winner");
+                const rockDraw = document.createElement("h3");
+                rockDraw.textContent = " Draw! No Winner ";
+                newDiv.appendChild(rockDraw);
                 break;
             }
         
         case "paper":
             if (computerChoice == "rock") {
                 humanScore = humanScore + 1;
-                console.log("You Win! Paper beats Rock " + ", Your Score is " + humanScore);
+                const paperWin = document.createElement("h3");
+                paperWin.textContent = " You Win! Paper beats Rock ";
+                newDiv.appendChild(paperWin);
                 break;
             }
             else if (computerChoice == "scissors") {
                 computerScore = computerScore + 1;
-                console.log("You Lose! Scissors beats paper");
+                const paperLose = document.createElement("h3");
+                paperLose.textContent = " You lose! Rock beats Paper "
+                newDiv.appendChild(paperLose);
                 break;
             } else {
-                console.log("Draw! No Winner");
+                const paperDraw = document.createElement("h3");
+                paperDraw.textContent = " Draw! No Winner ";
+                newDiv.appendChild(paperDraw);
                 break;
             }
         
         case "scissors":
             if (computerChoice == "rock") {
                 computerScore = computerScore + 1;
-                console.log("You Lose! Rock beats Scissors");
+                const scissorsLose = document.createElement("h3");
+                scissorsLose.textContent = " You Lose! Rock beats Scissors ";
+                newDiv.appendChild(scissorsLose);
                 break;
             }
             else if (computerChoice == "scissors") {
-                console.log("Draw! No Winner");
+                const scissorsDraw = document.createElement("h3");
+                scissorsDraw.textContent = " Draw! No Winner ";
+                newDiv.appendChild(scissorsDraw);
                 break;
             } else {
                 humanScore = humanScore + 1;
-                console.log("You Win! Scissors beats paper " + "Your Score is " + humanScore);
-                
+                const scissorsWin = document.createElement("h3");
+                scissorsWin.textContent = " You Win! Scissors beats pape ";
+                newDiv.appendChild(scissorsWin);
                 break;
             }
         default:
@@ -109,7 +124,7 @@ const buttons= document.querySelectorAll('.btn');
 buttons.forEach(button => {
     button.addEventListener('click', () => {
         const value = button.id;
-        playRound(value,computerSelection = getComputerChoice());
+        playRound(value, computerSelection = getComputerChoice());
     });
 });
 
