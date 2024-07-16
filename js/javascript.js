@@ -11,10 +11,10 @@ function getComputerChoice() {
     let choice2 = "paper";
     let choice3 = "scissors";
     let prob = Math.random();
-    if (prob > 0 && prob < 0.333) {
+    if (prob < 1/3) {
         return choice1;
     }
-    else if (prob > 0.333 && prob < 0.666) {
+    else if (prob < 2/3) {
         return choice2;
     } else {
         return choice3;
@@ -117,11 +117,18 @@ buttons.forEach(button => {
         scores.style.color = "blue";
         newDiv.appendChild(scores);
 
-        if (humanScore > 5 || computerScore > 5 ) {
+        if (humanScore >= 5 || computerScore >= 5 ) {
             const winner = document.createElement("h3");
             winner.textContent = " Human Score : " + humanScore + " Computer Score: " + computerScore;
             winner.style.color = "red";
             newDiv.appendChild(winner);
+            if (humanScore >= 5) {
+                alert("You Win! "+ " Human Score : " + humanScore + " Computer Score: " + computerScore );
+                setTimeout(() => window.location.reload(), 100);
+            } else {
+                alert("Computer Wins! "+ " Human Score : " + humanScore + " Computer Score: " + computerScore)
+                setTimeout(() => window.location.reload(), 100);
+            }            
         }
     });
 });
