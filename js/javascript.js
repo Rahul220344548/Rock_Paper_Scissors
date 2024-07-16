@@ -125,12 +125,15 @@ buttons.forEach(button => {
     button.addEventListener('click', () => {
         const value = button.id;
         playRound(value, computerSelection = getComputerChoice());
-
+        const scores = document.createElement("h5");
+        scores.textContent = " Human Score : " + humanScore + " Computer Score: " + computerScore;
+        scores.style.color = "blue";
+        newDiv.appendChild(scores);
         if (humanScore > 5 || computerScore > 5 ) {
-            const scores = document.createElement("h3");
-            scores.textContent = " Human Score : " + humanScore + " Computer Score: " + computerScore;
-            scores.style.color = "red";
-            newDiv.appendChild(scores);
+            const winner = document.createElement("h3");
+            winner.textContent = " Human Score : " + humanScore + " Computer Score: " + computerScore;
+            winner.style.color = "red";
+            newDiv.appendChild(winner);
         }
     });
 });
