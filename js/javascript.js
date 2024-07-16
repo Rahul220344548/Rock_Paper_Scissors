@@ -105,30 +105,18 @@ function playRound(humanChoice, computerChoice) {
  
 }
 
-function playGame(n) {
-
-    for (let i = 0; i < n; i++) {
-        const humanSelection = getHumanchoice();
-        const computerSelection = getComputerChoice();
-        playRound(humanSelection, computerSelection);
-    }
-    console.log("Human Score : " + humanScore + " Computer Score: " + computerScore);
-}
-
-let numberOfRounds = 5; 
-// playGame(numberOfRounds);
-
-
 const buttons= document.querySelectorAll('.btn');
 
 buttons.forEach(button => {
     button.addEventListener('click', () => {
         const value = button.id;
         playRound(value, computerSelection = getComputerChoice());
+
         const scores = document.createElement("h5");
         scores.textContent = " Human Score : " + humanScore + " Computer Score: " + computerScore;
         scores.style.color = "blue";
         newDiv.appendChild(scores);
+
         if (humanScore > 5 || computerScore > 5 ) {
             const winner = document.createElement("h3");
             winner.textContent = " Human Score : " + humanScore + " Computer Score: " + computerScore;
@@ -141,5 +129,3 @@ buttons.forEach(button => {
 const body = document.querySelector("body");
 const newDiv = document.createElement("div");
 body.appendChild(newDiv);
-
-//     console.log("Human Score : " + humanScore + " Computer Score: " + computerScore);
