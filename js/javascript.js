@@ -125,6 +125,13 @@ buttons.forEach(button => {
     button.addEventListener('click', () => {
         const value = button.id;
         playRound(value, computerSelection = getComputerChoice());
+
+        if (humanScore > 5 || computerScore > 5 ) {
+            const scores = document.createElement("h3");
+            scores.textContent = " Human Score : " + humanScore + " Computer Score: " + computerScore;
+            scores.style.color = "red";
+            newDiv.appendChild(scores);
+        }
     });
 });
 
@@ -132,3 +139,4 @@ const body = document.querySelector("body");
 const newDiv = document.createElement("div");
 body.appendChild(newDiv);
 
+//     console.log("Human Score : " + humanScore + " Computer Score: " + computerScore);
